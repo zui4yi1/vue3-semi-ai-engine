@@ -46,7 +46,7 @@ export interface IEgForm<T = any> {
  * @property {string} [dictName] - 字典名称，当字段需要从预定义的选项中取值时使用，若不传则使用prop作为选项
  * @property {any} [component] - 该字段对应的组件，允许自定义组件
  * @property {(mode: IFormMode) => boolean} [renderWhen] - 动态控制字段是否渲染的条件判断函数, 如果不渲染则formData内也没有此字段
- * @property {(mode: IFormMode, form: any) => boolean} [visibleWhen] - 动态控制字段可见性的条件判断函数，与when功能类似，但多了一个参数form, 用于控制可见性
+ * @property {(mode: IFormMode, form: any, authInfo: any) => boolean} [visibleWhen] - 动态控制字段可见性的条件判断函数，与renderWhen功能类似，但多了参数form和authInfo, 用于控制可见性
  */
 export interface ISchemeItem {
   type: string;
@@ -59,7 +59,7 @@ export interface ISchemeItem {
   dictName?: string;
   component?: Component;
   renderWhen?: (mode: IFormMode) => boolean;
-  visibleWhen?: (mode: IFormMode, form: any) => boolean;
+  visibleWhen?: (mode: IFormMode, form: any, authInfo: any) => boolean;
 }
 
 /**
@@ -88,6 +88,7 @@ export type IOnFormChange = (
  * @property {String} mode {@link IFormMode} - 模式标识，用于区分表单或展示模式
  * @property {Array} schemes - 方案数组, 定义有哪些表单项
  * @property {Object} detail - 表单数据, 特意用detail作为名称, 表示单向数据流, 而不是双向绑定的
+ * @property {Object} authInfo - 授权信息, 用于根据授权信息控制表单项的显示与隐藏, 会把visibleWhen中作为回调传回
  * @property {Object} dicts - 字典集, 所有字典的集合
  * @property {Object} rules - 验证规则对象
  * @property {Number} labelWidth - 标签宽度，默认为120像素
@@ -107,6 +108,10 @@ export const props = {
     default: () => [],
   },
   detail: {
+    type: Object,
+    default: () => ({}),
+  },
+  authInfo: {
     type: Object,
     default: () => ({}),
   },

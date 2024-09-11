@@ -26,11 +26,27 @@ yarn add vue3-semi-ai-engine
 
 ```
 import { createApp } from 'vue';
-import vue3SemiAiEngine from 'vue3-semi-ai-engine';
+import vue3SemiAiEngine from 'vue3-semi-ai-engine/components/install';
+
 
 const app = createApp(App);
 app.use(vue3SemiAiEngine);
 ```
+
+- `tsconfig.json`的`compilerOptions`属性增加：
+
+```
+{
+  "compilerOptions": {
+    "types": ["vue3-semi-ai-engine/types/index.d.ts"]
+  }
+}
+```
+
+### 更新日志
+
+- 1.0.1 `eg-form`增加`authInfo`, 便于根据权限控制显隐
+- 1.0.0 第一版
 
 ## 组件 API
 
@@ -370,7 +386,7 @@ export interface IScheme {
  * @property {string} [dictName] - 字典名称，当字段需要从预定义的选项中取值时使用，若不传则使用prop作为选项
  * @property {any} [component] - 该字段对应的组件，允许自定义组件
  * @property {(mode: IFormMode) => boolean} [renderWhen] - 动态控制字段是否渲染的条件判断函数, 如果不渲染则formData内也没有此字段
- * @property {(mode: IFormMode, form: any) => boolean} [visibleWhen] - 动态控制字段可见性的条件判断函数，与when功能类似，但多了一个参数form, 用于控制可见性
+ * @property {(mode: IFormMode, form: any, authInfo: any) => boolean} [visibleWhen] - 动态控制字段可见性的条件判断函数，与renderWhen功能类似，但多了参数form和authInfo, 用于控制可见性
  */
 export interface ISchemeItem {
   type: string;
@@ -383,7 +399,7 @@ export interface ISchemeItem {
   dictName?: string;
   component?: Component;
   renderWhen?: (mode: IFormMode) => boolean;
-  visibleWhen?: (mode: IFormMode, form: any) => boolean;
+  visibleWhen?: (mode: IFormMode, form: any, authInfo: any) => boolean;
 }
 
 

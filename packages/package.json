@@ -1,6 +1,6 @@
 {
   "name": "vue3-semi-ai-engine",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "这是一个基于vue3的半AI代码引擎，内置了许多功能强大的引擎组件。通过搭配 “通义灵码”大语言模型(vscode 插件)，即可实现1分钟就快速搭建好demo页面的效果",
   "private": false,
   "main": "components/install.ts",

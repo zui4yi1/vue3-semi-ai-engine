@@ -34,7 +34,7 @@
         <!--表单项遍历-->
         <template v-for="(item, inx2) in scheme.items">
           <EgFormItem
-            v-show="item.visibleWhen === undefined || item.visibleWhen(mode, form)"
+            v-show="item.visibleWhen === undefined || item.visibleWhen(mode, form, authInfo)"
             v-if="item.renderWhen === undefined || item.renderWhen(mode)"
             :mode="mode"
             :form="form"
