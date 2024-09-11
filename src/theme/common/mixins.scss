@@ -1,0 +1,72 @@
+// 文本最多(n)行，超出部分用...表示
+@mixin ellipse-lines($num: 1) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $num;
+  -webkit-box-orient: vertical;
+}
+
+/**
+   *定义滚动条样式 圆角和阴影不需要则传入null
+   *	1、$outColor -- 滚动条颜色
+   *	2、$innerColor -- 滑块颜色
+   *	3、$height -- 滚动条宽高、圆角
+   *	4、$width
+   *	5、$radius
+   *	6、$shadow -- 阴影
+  */
+$bgColor: transparent;
+$bgGrey: rgba(144, 147, 153, 0.2);
+$bgHoverGrey: rgba(144, 147, 153, 0.3);
+
+@mixin scrollBar(
+  $width: 6px,
+  $height: 6px,
+  $outColor: $bgColor,
+  $innerColor: $bgGrey,
+  $innerHoverColor: $bgHoverGrey,
+  $radius: 5px,
+  $shadow: null
+) {
+  /*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+  &::-webkit-scrollbar {
+    width: $width;
+    height: $height;
+    background-color: $outColor;
+  }
+
+  /*定义滚动条轨道 内阴影+圆角*/
+  &::-webkit-scrollbar-track {
+    @if ($shadow!=null) {
+      -webkit-box-shadow: $shadow;
+    }
+    @if ($radius!=null) {
+      border-radius: $radius;
+    }
+    background-color: $outColor;
+  }
+
+  /*定义滑块 内阴影+圆角*/
+  &::-webkit-scrollbar-thumb {
+    @if ($shadow!=null) {
+      -webkit-box-shadow: $shadow;
+    }
+    @if ($radius!=null) {
+      border-radius: $radius;
+    }
+    background-color: $innerColor;
+    border: 1px solid $innerColor;
+
+    &:hover {
+      background-color: $innerHoverColor;
+    }
+  }
+}
+
+/** 阴影 **/
+@mixin box-shadow-black($border-radius: 6px) {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  background-color: $--color-white;
+  transition: 0.3s box-shadow;
+}

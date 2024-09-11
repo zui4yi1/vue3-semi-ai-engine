@@ -1,0 +1,23 @@
+:global(.el-drawer__body) {
+  padding: 0 !important; // 顺序问题, 先用important覆盖掉
+}
+:global(.el-drawer__footer) {
+  padding: 0;
+  text-align: unset;
+}
+.custom-body {
+  padding: 0 30px;
+  overflow: auto;
+  height: 100%;
+}
+.custom-foot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  flex-shrink: 0;
+
+  .el-button + .el-button {
+    margin-left: 40px;
+  }
+}

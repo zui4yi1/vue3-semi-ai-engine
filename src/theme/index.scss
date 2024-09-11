@@ -1,0 +1,27 @@
+/** 基础定义 */
+@import './common/index.scss';
+
+/** element 变量 */
+@import './element-vars/index.scss';
+
+/** element组件覆盖的样式 */
+@import './element-cover/index.scss';
+
+/** 布局 */
+@import './layout.scss';
+
+.color-success {
+  color: rgb(0, 255, 0);
+}
+.color-info {
+  color: #abc;
+}
+.color-warning {
+  color: rgb(100, 0, 0);
+}
+.color-danger {
+  color: rgb(255, 0, 0);
+}
+.color-primary {
+  color: rgb(0, 0, 255);
+}

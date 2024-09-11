@@ -1,0 +1,29 @@
+:global(.el-dialog) {
+  padding-bottom: 0;
+}
+
+:global(.el-dialog__body) {
+  padding: 0;
+}
+
+:global(.el-dialog__footer) {
+  padding: 0;
+  text-align: unset;
+}
+.custom-body {
+  padding: 0 30px;
+  overflow: auto;
+  max-height: 50vh;
+  min-height: 40px;
+}
+.custom-foot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  flex-shrink: 0;
+
+  .el-button + .el-button {
+    margin-left: 40px;
+  }
+}

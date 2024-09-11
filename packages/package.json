@@ -1,0 +1,26 @@
+{
+  "name": "vue3-semi-ai-engine",
+  "version": "1.0.0",
+  "description": "这是一个基于vue3的半AI代码引擎，内置了许多功能强大的引擎组件。通过搭配 “通义灵码”大语言模型(vscode 插件)，即可实现1分钟就快速搭建好demo页面的效果",
+  "private": false,
+  "main": "components/install.ts",
+  "keywords": [
+    "vue3-semi-ai-engine",
+    "vue3 ui",
+    "element-plus"
+  ],
+  "author": "xiehaihong",
+  "license": "MIT",
+  "files": [
+    "components",
+    "types"
+  ],
+  "dependencies": {
+    "element-plus": "^2.6.0"
+  },
+  "typings": "types/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zui4yi1/vue3-semi-ai-engine.git"
+  }
+}

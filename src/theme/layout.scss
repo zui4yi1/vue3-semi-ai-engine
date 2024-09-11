@@ -1,0 +1,129 @@
+.home-layout {
+  height: 100vh;
+  overflow: hidden;
+
+  .el-header,
+  .el-aside,
+  .el-main {
+    padding: 0;
+  }
+
+  .el-header {
+    color: var(--el-color-white);
+    background-color: var(--el-color-primary);
+    .layout-header {
+      height: 60px;
+      padding-left: 12px;
+    }
+  }
+  .el-aside {
+    position: relative;
+    /** 路由菜单 */
+    .layout-nav-menu {
+      height: calc(100vh - 60px);
+      background: linear-gradient(180deg, #223c61 0%, #335381 100%);
+      color: #fff;
+      .el-menu {
+        border: none;
+        background-color: transparent;
+        .el-sub-menu {
+          .el-menu {
+            padding: 0;
+            .el-menu-item {
+              // submenu增加padding
+              padding-left: 46px;
+            }
+          }
+        }
+
+        .el-sub-menu__title,
+        .el-menu-item {
+          height: 44px;
+          line-height: 44px;
+          border-radius: 30px;
+          box-sizing: border-box;
+          padding-left: 20px;
+          margin-top: 10px;
+          color: var(--el-color-white);
+          display: flex;
+          i {
+            color: var(--el-color-white);
+          }
+          .menu-anchor {
+            color: var(--el-color-white);
+          }
+        }
+
+        /** 非折叠时的文字和背景颜色 */
+        &:not(.el-menu--collapse) {
+          .el-sub-menu__title,
+          .el-menu-item {
+            &:hover,
+            &.is-active {
+              background: var(--el-color-primary);
+              color: var(--el-color-white);
+            }
+          }
+        }
+        /**折叠时的图标颜色 */
+        &.el-menu--collapse {
+          .el-sub-menu,
+          .el-menu-item {
+            &:hover,
+            &.is-active {
+              background: transparent;
+              i.el-icon {
+                color: var(--el-menu-active-color);
+              }
+            }
+            .el-sub-menu__title {
+              background: transparent;
+            }
+          }
+        }
+      }
+    }
+    /** 折叠按钮 */
+    .layout-nav-menu-collapse {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+  }
+  .el-main {
+    overflow: hidden;
+    padding: 0 20px;
+    background-color: var(--el-fill-color);
+
+    /** 面包屑 */
+    .layout-breadcrumb {
+      height: 40px;
+      &__text {
+        color: var(--el-text-color-regular);
+        font-weight: 600;
+        &.is-last {
+          color: var(--el-text-color-primary);
+        }
+      }
+    }
+
+    /** 主体内容 */
+    .layout-main {
+      height: calc(100vh - 120px); // 120px = 60px(headers) + 40px(breadcrumb) + 20px(底部)
+      background-color: #fff;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      padding: 20px;
+      box-sizing: border-box;
+      &__scrollbar {
+        height: calc(100vh - 160px); // 160 = 120(父节点layout-main) + 40px(上下padding)
+      }
+      /** 内嵌页面 */
+      .layout-embedded-iframe {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}
