@@ -6,11 +6,11 @@
 
 以下是 5 个引擎组件及简要说明(**点击组件名可跳到详情**)：
 
-- **[`EgComponents`](#EgComponents)**: `vue` 原生元组件 `component` 的扩展，数组形式，可同时管理多个组件。
-- **[`EgCurd`](#EgCurd)**: 引擎式查询组件，集成了查询与列表。与`EgForm`搭配使用，即可实现完整的 `CRUD` 功能，且开发者仅需考虑配置问题，而无须写代码。
-- **[`EgForm`](#EgForm)**: 引擎式表单组件，统一管理详情、新增、编辑等表单功能。
-- **[`EgDialog`](#EgDialog)**: 引擎式弹窗组件，不论页面内有多少弹窗，都可统一管理显隐。
-- **[`EgDrawer`](#EgDialog)**: 引擎式抽屉组件，不论页面内有多少抽屉，都可统一管理显隐。
+- **[`EgComponents`](#user-content-EgComponents)**: `vue` 原生元组件 `component` 的扩展，数组形式，可同时管理多个组件。
+- **[`EgCurd`](#user-content-EgCurd)**: 引擎式查询组件，集成了查询与列表。与`EgForm`搭配使用，即可实现完整的 `CRUD` 功能，且开发者仅需考虑配置问题，而无须写代码。
+- **[`EgForm`](#user-content-EgForm)**: 引擎式表单组件，统一管理详情、新增、编辑等表单功能。
+- **[`EgDialog`](#user-content-EgDialog)**: 引擎式弹窗组件，不论页面内有多少弹窗，都可统一管理显隐。
+- **[`EgDrawer`](#user-content-EgDialog)**: 引擎式抽屉组件，不论页面内有多少抽屉，都可统一管理显隐。
 
 ## 快速开始
 
@@ -50,7 +50,7 @@ app.use(vue3SemiAiEngine);
 
 ## 组件 API
 
-### 1. <span id="user-content-EgComponents"> EgComponents<span>
+### 1. <span id="EgComponents"> EgComponents<span>
 
 `vue` 原生元组件 `component` 的扩展，数组形式，可同时管理多个组件
 
@@ -125,7 +125,7 @@ const componentName = ref<'Com1'|'Com2'>('Com1');
 **注意：**
 组件 Com1 内需要定义组件名 `name:XXX`, 这样才能准确的识别
 
-### 2. <span id="user-content-EgCurd"> EgCurd<span>
+### 2. <span id="EgCurd"> EgCurd<span>
 
 引擎式查询组件，集成了查询与列表。与`EgForm`搭配使用，即可实现完整的 `CRUD` 功能，且开发者仅需考虑配置问题，而无须写代码
 
@@ -274,7 +274,7 @@ defineEmits(['onFormChangeEvent', 'onTableEvent', 'onPaginationEvent', 'onCusEve
 </EgCurd>
 ```
 
-### 3. <span id="user-content-EgForm"> EgForm<span>
+### 3. <span id="EgForm"> EgForm<span>
 
 引擎式表单组件，统一管理详情、新增、编辑等表单功能。即一个`<EgForm>`即可实现新增、编辑、详情的渲染。
 
@@ -466,7 +466,7 @@ emits('onFormChange', prop, val, {
 />
 ```
 
-### 4. <span id="user-content-EgDialog"> EgDialog (EgDrawer 与之完全相同)<span>
+### 4. <span id="EgDialog"> EgDialog (EgDrawer 与之完全相同)<span>
 
 引擎式弹窗组件，不论页面内有多少弹窗，都可统一管理显隐。
 
