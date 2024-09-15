@@ -17,7 +17,7 @@ export const props = {
     default: () => [],
   },
   value: {
-    type: String,
+    type: [String, Number, Boolean, Object, Array],
     default: '',
   },
   props: {
