@@ -45,6 +45,7 @@ app.use(vue3SemiAiEngine);
 
 ### 更新日志
 
+- 1.0.2 `eg-compoents`的 value 类型修复, `eg-form`使用的表单与详情用 v-if 判断
 - 1.0.1 `eg-form`增加`authInfo`, 便于根据权限控制显隐
 - 1.0.0 第一版
 
