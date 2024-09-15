@@ -1,9 +1,8 @@
 <template>
   <div style="height: 100%">
-    <!-- 暂时使用vshow的方式控制显隐, 因为切换时EgFormItem会触发, 不好控制, 后续转到form-item内-->
     <!--表单模式-->
     <el-form
-      v-show="mode !== 'detail'"
+      v-if="mode !== 'detail'"
       inline
       ref="formRef"
       :model="form"
@@ -99,7 +98,7 @@
     </el-form>
     <!--详情模式-->
     <ExDetail
-      v-show="mode === 'detail'"
+      v-else
       :schemes="schemes"
       :form="form"
       :dicts="dicts"
